@@ -1,3 +1,7 @@
+function zeroPad(num) {
+    return num.toString().padStart(2, '0');
+}
+
 class Duration {
     constructor(value) {
         if (typeof value === 'string') {
@@ -25,15 +29,15 @@ class Duration {
         let hours = 0;
         if (seconds >= 3600) {
             hours = Math.floor(seconds / 3600);
-            str += `${hours.toString().padStart(2, '0')}:`;
+            str += `${zeroPad(hours)}:`;
             seconds -= (hours * 3600);
         }
         if (hours > 0 || seconds >= 60) {
             minutes = Math.floor(seconds / 60);
-            str += `${minutes.toString().padStart(2, '0')}:`;
+            str += `${zeroPad(minutes)}:`;
             seconds -= (minutes * 60);
         }
-        str += `${seconds.toString().padStart(2, '0')}`;
+        str += `${zeroPad(seconds)}`;
         return str;
     }
 }
