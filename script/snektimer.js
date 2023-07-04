@@ -107,7 +107,6 @@ class Timer {
     timer.on('complete', () => {
         timer.reset(getStartTime());
         document.getElementById('time').innerText = finalMessage;
-
     });
 
     document.getElementById('active-toggle').addEventListener('click', () => {
