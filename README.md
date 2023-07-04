@@ -1,6 +1,8 @@
 # Snek Timer
 
-Work in progress.
+Work in Progress.
+
+Timer overlay for OBS, with the ability to start, stop, and reset via controls intended to hide outside the viewable area.
 
 # LICENSE
 
