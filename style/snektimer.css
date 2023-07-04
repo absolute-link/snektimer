@@ -1,0 +1,15 @@
+#time {
+    font-size: 40px;
+    font-weight: bold;
+    color: #228822;
+}
+#controls {
+    position: absolute;
+    bottom: 12px;
+}
+button {
+    width: 100px;
+}
+#start-time {
+    width: 50px;
+}
