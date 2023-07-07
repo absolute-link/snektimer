@@ -27,16 +27,17 @@ class Duration {
         let seconds = this.seconds;
         let minutes = 0;
         let hours = 0;
+
         if (seconds >= 3600) {
             hours = Math.floor(seconds / 3600);
             str += `${zeroPad(hours)}:`;
             seconds -= (hours * 3600);
         }
-        if (hours > 0 || seconds >= 60) {
-            minutes = Math.floor(seconds / 60);
-            str += `${zeroPad(minutes)}:`;
-            seconds -= (minutes * 60);
-        }
+
+        minutes = Math.floor(seconds / 60);
+        str += `${zeroPad(minutes)}:`;
+        seconds -= (minutes * 60);
+
         str += `${zeroPad(seconds)}`;
         return str;
     }
@@ -90,39 +91,3 @@ class Timer {
         if (this.events.reset) this.events.reset();
     }
 }
-
-(() => {
-    const finalMessage = "Zatsu's Cooked!";
-    const timer = new Timer();
-
-    const getStartTime = () => {
-        return document.getElementById('start-time').value;
-    };
-
-    timer.on('start', () => {
-        document.getElementById('active-toggle').innerText = 'Pause';
-    });
-    timer.on('stop', () => {
-        document.getElementById('active-toggle').innerText = 'Resume';
-    });
-    timer.on('update', () => {
-        document.getElementById('time').innerText = timer.remainingDuration.toString();
-    });
-    timer.on('complete', () => {
-        timer.reset(getStartTime());
-        document.getElementById('time').innerText = finalMessage;
-    });
-
-    document.getElementById('active-toggle').addEventListener('click', () => {
-        if (timer.active) timer.stop();
-        else timer.start();
-    });
-    document.getElementById('reset').addEventListener('click', () => {
-        if (timer.active) timer.stop();
-        timer.reset(getStartTime());
-        timer.start();
-    });
-
-    timer.reset(getStartTime());
-    timer.start();
-})();

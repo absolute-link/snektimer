@@ -1,14 +1,36 @@
+#overlay {
+    width: 300px;
+    height: 150px;
+}
 #time {
+    display: inline-block;
+    font-weight: bold;
     font-size: 40px;
+}
+
+#overlay.frame #time {
+    padding: 20px;
+    background-color: #222299;
+    color: #ffffff;
+}
+#overlay.clock #time {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#overlay.plain #time {
     font-weight: bold;
     color: #228822;
+    padding: 20px;
 }
-#controls {
-    position: absolute;
-    bottom: 12px;
+
+#controls div {
+    margin-bottom: 8px;
 }
-button {
-    width: 100px;
+button, label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 4px;
+    text-align: center;
 }
 #start-time {
     width: 50px;
