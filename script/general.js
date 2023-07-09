@@ -36,28 +36,25 @@ function createDropdowns() {
     }
 }
 
-function setDesign() {
+function updateDesign(settings) {
     const overlay = document.getElementById('overlay');
-    const designChoice = document.getElementById('design-choice');
-    overlay.className = designChoice.value;
+    overlay.className = settings.get('design-choice');
 }
 
-function playSound() {
-    const soundChoice = document.getElementById('sound-choice');
-    const audio = new Audio(`sounds/${soundChoice.value}.mp3`);
+function playSound(settings) {
+    const soundKey = settings.get('sound-choice');
+    const audio = new Audio(`sounds/${soundKey}.mp3`);
     audio.play();
 }
 
 (() => {
     createDropdowns();
-    setDesign();
 
-    const finalMessage = "Zatsu's Cooked!";
+    const settings = new Settings(window.location.hash);
+    updateDesign(settings);
+
+    const finalMessage = "Done!";
     const timer = new Timer();
-
-    const getStartTime = () => {
-        return document.getElementById('start-time').value;
-    };
 
     timer.on('start', () => {
         document.getElementById('active-toggle').innerText = 'Pause';
@@ -69,10 +66,14 @@ function playSound() {
         document.getElementById('time').innerText = timer.remainingDuration.toString();
     });
     timer.on('complete', () => {
-        timer.reset(getStartTime());
+        timer.reset(settings.get('start-time'));
         document.getElementById('time').innerText = finalMessage;
-        playSound();
+        document.getElementById('active-toggle').innerText = 'Restart';
+        playSound(settings);
     });
+
+    // TODO: for styles, try making each style a separate CSS file, and have the "DONE" text as a :before content: 'DONE' so that literally everything is style
+    // TODO: frame, clock, scroll (light), scroll (dark), plain text (light), plain text (dark)
 
     document.getElementById('active-toggle').addEventListener('click', () => {
         if (timer.active) timer.stop();
@@ -80,13 +81,22 @@ function playSound() {
     });
     document.getElementById('reset').addEventListener('click', () => {
         if (timer.active) timer.stop();
-        timer.reset(getStartTime());
+        timer.reset(settings.get('start-time'));
         timer.start();
     });
     document.getElementById('design-choice').addEventListener('change', () => {
-        setDesign();
+        updateDesign(settings);
+    });
+    document.getElementById('reset-settings').addEventListener('click', () => {
+        settings.loadFromStorage();
+        updateDesign(settings);
+    });
+    document.getElementById('save-settings').addEventListener('click', () => {
+        settings.saveToStorage();
     });
 
-    timer.reset(getStartTime());
-    timer.start();
+    timer.reset(settings.get('start-time'));
+    if (settings.get('auto-start')) {
+        timer.start();
+    }
 })();

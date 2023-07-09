@@ -23,14 +23,28 @@
     padding: 20px;
 }
 
+#controls {
+    width: 300px;
+    padding: 20px;
+    background-color: #222244;
+    color: #ffffff;
+}
 #controls div {
     margin-bottom: 8px;
 }
 button, label {
     display: inline-block;
-    width: 120px;
+    width: 140px;
     margin-right: 4px;
     text-align: center;
+}
+select {
+    vertical-align: middle;
+    min-width: 140px;
+}
+#active-toggle {
+    font-size: 1.4em;
+    width: 284px;
 }
 #start-time {
     width: 50px;

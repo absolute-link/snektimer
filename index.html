@@ -12,18 +12,25 @@
         </div>
         <div id="controls">
             <div>
-                <button id="active-toggle">Resume</button>
+                <button id="active-toggle">Start</button>
             </div>
             <div>
-                <button id="reset">Reset to Time</button><input id="start-time" type="text" value="30:00">
+                <button id="reset">Reset to Time</button><input id="start-time" type="text">
             </div>
             <div>
-                <label>Choose Style:</label><select id="design-choice"></select>
+                <label>Choose Style:</label><select id="design-choice" size="3"></select>
             </div>
             <div>
-                <label>Choose Sound:</label><select id="sound-choice"></select>
+                <label>Choose Sound:</label><select id="sound-choice" size="5"></select>
+            </div>
+            <div>
+                <label>Auto-Start:</label><input id="auto-start" type="checkbox">
+            </div>
+            <div>
+                <button id="reset-settings">Reset Settings</button><button id="save-settings">Save Settings</button>
             </div>
         </div>
+        <script src="script/settings.js"></script>
         <script src="script/timer.js"></script>
         <script src="script/general.js"></script>
     </body>
