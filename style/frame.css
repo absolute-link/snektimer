@@ -1,0 +1,20 @@
+.frame .container {
+    width: 300px;
+    height: 100px;
+}
+.frame .main {
+    margin: 0 5px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #0A0A0A;
+}
+.frame #time, .frame #message:after {
+    font-weight: bold;
+    font-size: 40px;
+}
+.frame .complete #time {
+    display: none;
+}
+.frame .complete #message:after {
+    content: 'Done';
+}

@@ -60,12 +60,13 @@ class Timer {
         this.active = true;
         if (this.events.start) this.events.start();
 
+        // delay 100ms first because intervals are not guaranteed
         setTimeout(() => {
             this.iteration();
             this.intervalId = setInterval(() => {
                 this.iteration();
             }, 1000);
-        }, 250);
+        }, 100);
     }
 
     iteration() {

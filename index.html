@@ -4,11 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>SnekTimer</title>
-        <link rel="stylesheet" href="style/snektimer.css">
+        <link rel="stylesheet" href="style/general.css">
+        <script src="config.js"></script>
+        <script src="script/settings.js"></script>
+        <script src="script/timer.js"></script>
+        <script src="script/general.js"></script>
+        <script>loadDesigns();</script>
     </head>
     <body>
-        <div id="overlay">
-            <span id="time"></span>
+        <div id="overlay" class="ready">
+            <div class="container">
+                <div class="top outer"></div>
+                <div class="top inner"></div>
+                <div class="main">
+                    <span id="title"></span>
+                    <span id="time"></span>
+                    <span id="message"></span>
+                </div>
+                <div class="bottom inner"></div>
+                <div class="bottom outer"></div>
+            </div>
         </div>
         <div id="controls">
             <div>
@@ -18,10 +33,10 @@
                 <button id="reset">Reset to Time</button><input id="start-time" type="text">
             </div>
             <div>
-                <label>Choose Style:</label><select id="design-choice" size="3"></select>
+                <label>Choose Style:</label><select id="design-choice" size="6"></select>
             </div>
             <div>
-                <label>Choose Sound:</label><select id="sound-choice" size="5"></select>
+                <label>Choose Sound:</label><select id="sound-choice" size="6"></select>
             </div>
             <div>
                 <label>Auto-Start:</label><input id="auto-start" type="checkbox">
@@ -30,8 +45,6 @@
                 <button id="reset-settings">Reset Settings</button><button id="save-settings">Save Settings</button>
             </div>
         </div>
-        <script src="script/settings.js"></script>
-        <script src="script/timer.js"></script>
-        <script src="script/general.js"></script>
+        <script>init();</script>
     </body>
 </html>

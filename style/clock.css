@@ -1,0 +1,21 @@
+.clock .container {
+    width: 300px;
+    height: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.clock .main {
+    margin: 0 5px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #0A0A0A;
+}
+.clock #time, .clock #message:after {
+    font-weight: bold;
+    font-size: 40px;
+}
+.clock .complete #time {
+    display: none;
+}
+.clock .complete #message:after {
+    content: 'DO:NE';
+}

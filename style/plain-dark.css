@@ -1,0 +1,32 @@
+.plain-dark .container {
+    width: 300px;
+    height: 100px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+.plain-dark #title:after {
+    content: 'Zatsu:';
+    font-weight: bold;
+    font-size: 30px;
+    vertical-align: text-bottom;
+}
+.plain-dark .main {
+    margin: 0 5px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #0A0A0A;
+    text-shadow:
+        1px 1px 1px rgba(255,255,255,0.3),
+        -1px 1px 1px rgba(255,255,255,0.3),
+        1px -1px 1px rgba(255,255,255,0.3),
+        -1px -1px 1px rgba(255,255,255,0.3);
+}
+.plain-dark #time, .plain-dark #message:after {
+    font-weight: bold;
+    font-size: 40px;
+}
+.plain-dark .complete #time {
+    display: none;
+}
+.plain-dark .complete #message:after {
+    content: 'Done!';
+}
