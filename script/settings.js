@@ -11,8 +11,8 @@ class Settings {
     storagePfx = 'default';
     items = {
         'start-time': new SettingsItem('30:00'),
-        'design-choice': new SettingsItem(),
-        'sound-choice': new SettingsItem(),
+        'design-choice': new SettingsItem('scroll-light'),
+        'sound-choice': new SettingsItem('harp-glissando-descending-short-103886.mp3'),
         'auto-start': new SettingsItem(true)
     };
 
