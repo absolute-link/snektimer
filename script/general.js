@@ -1,8 +1,10 @@
 function loadDesigns() {
-    for (const styleName of Object.keys(DESIGNS)) {
+    for (const designName of Object.keys(DESIGNS)) {
         const tag = document.createElement('link');
+        tag.id = designName;
         tag.rel = 'stylesheet';
-        tag.href = `style/${styleName}.css`;
+        tag.media = 'none';
+        tag.href = `style/${designName}.css`;
         document.head.appendChild(tag);
     }
 }
@@ -27,7 +29,11 @@ function createDropdowns() {
 }
 
 function updateDesign(settings) {
-    document.body.className = settings.get('design-choice');
+    const choice = settings.get('design-choice');
+    for (const designName of Object.keys(DESIGNS)) {
+        const setMedia = (designName === choice) ? 'all' : 'none';
+        document.getElementById(designName).media = setMedia;
+    }
 }
 
 function playSound(settings) {

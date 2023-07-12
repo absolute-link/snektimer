@@ -1,15 +1,15 @@
-.plain-light .container {
+.container {
     width: 300px;
     height: 100px;
     font-family: Verdana, Tahoma, sans-serif;
 }
-.plain-light #title:after {
+#title:after {
     content: 'Zatsu:';
     font-weight: bold;
     font-size: 30px;
     vertical-align: text-bottom;
 }
-.plain-light .main {
+.main {
     margin: 0 5px;
     padding: 10px 20px;
     text-align: center;
@@ -20,13 +20,13 @@
         1px -1px 1px rgba(0,0,0,0.5),
         -1px -1px 1px rgba(0,0,0,0.5);
 }
-.plain-light #time, .plain-light #message:after {
+#time, #message:after {
     font-weight: bold;
     font-size: 40px;
 }
-.plain-light .complete #time {
+.complete #time {
     display: none;
 }
-.plain-light .complete #message:after {
+.complete #message:after {
     content: 'Done!';
 }

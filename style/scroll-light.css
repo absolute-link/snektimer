@@ -1,40 +1,40 @@
-.scroll-light .container {
+.container {
     width: 200px;
     height: 150px;
     font-family: Verdana, Tahoma, sans-serif;
 }
-.scroll-light .outer {
+.outer {
     background-color: #B7A981;
     height: 12px;
 }
-.scroll-light .inner {
+.inner {
     background-color: #9B9572;
     height: 10px;
     margin: 0 5px;
 }
-.scroll-light #title:after {
+#title:after {
     display: block;
     content: 'ZATSU';
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 0.1em;
 }
-.scroll-light .main {
+.main {
     margin: 0 5px;
     padding: 10px 20px;
     background-color: #E3E5EA;
     color: #222428;
     text-align: center;
 }
-.scroll-light #time, .scroll-light #message:after {
+#time, #message:after {
     display: inline-block;
     font-weight: bold;
     font-size: 40px;
     line-height: 40px;
 }
-.scroll-light .complete #time {
+.complete #time {
     display: none;
 }
-.scroll-light .complete #message:after {
+.complete #message:after {
     content: 'Done!';
 }
