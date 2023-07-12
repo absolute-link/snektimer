@@ -24,10 +24,15 @@ function createDropdowns() {
         opt.innerText = text;
         soundChoice.appendChild(opt);
     }
+    
+    const designChoice2 = document.getElementById('design-choice2');
+    for(let design in DESIGNS){
+        designChoice2.addOption(DESIGNS[design], design);
+    }
 }
 
 function updateDesign(settings) {
-    document.body.className = settings.get('design-choice');
+    document.body.className = settings.get('design-choice2');
 }
 
 function playSound(settings) {
@@ -76,6 +81,9 @@ function init() {
     document.getElementById('design-choice').addEventListener('change', () => {
         updateDesign(settings);
     });
+    document.getElementById('design-choice2').onSelect = () => {
+        updateDesign(settings);
+    }
     document.getElementById('reset-settings').addEventListener('click', () => {
         settings.loadFromStorage();
         updateDesign(settings);

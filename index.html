@@ -6,6 +6,7 @@
         <title>SnekTimer</title>
         <link rel="stylesheet" href="style/general.css">
         <script src="config.js"></script>
+        <script src="script/select.js"></script>
         <script src="script/settings.js"></script>
         <script src="script/timer.js"></script>
         <script src="script/general.js"></script>
@@ -33,7 +34,9 @@
                 <button id="reset">Reset to Time</button><input id="start-time" type="text">
             </div>
             <div>
-                <label>Choose Style:</label><select id="design-choice" size="6"></select>
+                <label>Choose Style:</label>
+                <select id="design-choice" size="6"></select>
+                <fancy-select id="design-choice2"></fancy-select>
             </div>
             <div>
                 <label>Choose Sound:</label><select id="sound-choice" size="6"></select>
