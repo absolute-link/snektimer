@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style/general.css">
         <script src="config.js"></script>
         <script src="script/settings.js"></script>
+        <script src="script/sound.js"></script>
         <script src="script/timer.js"></script>
         <script src="script/general.js"></script>
         <script>loadDesigns();</script>
@@ -36,7 +37,11 @@
                 <label>Choose Style:</label><select id="design-choice" size="5"></select>
             </div>
             <div>
-                <label>Choose Sound:</label><select id="sound-choice" size="5"></select>
+                <label>Choose Sound:</label>
+                <select id="sound-choice" size="5">
+                    <option value="">[None]</option>
+                    <option value="_random">[Random]</option>
+                </select>
             </div>
             <div>
                 <label>Auto-Start:</label><input id="auto-start" type="checkbox">

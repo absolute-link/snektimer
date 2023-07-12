@@ -36,10 +36,17 @@ function updateDesign(settings) {
     }
 }
 
-function playSound(settings) {
-    const soundFilename = settings.get('sound-choice');
-    const audio = new Audio(`sounds/${soundFilename}`);
-    audio.play();
+function playSound(player, settings) {
+    const soundChoice = settings.get('sound-choice');
+    if (soundChoice) {
+        if (soundChoice === '_random') {
+            const filenames = [...Object.keys(SOUNDS)];
+            const num = Math.floor(Math.random() * filenames.length);
+            player.play(filenames[num]);
+        } else {
+            player.play(soundChoice);
+        }
+    }
 }
 
 function init() {
@@ -47,6 +54,8 @@ function init() {
 
     const settings = new Settings(window.location.hash);
     updateDesign(settings);
+
+    const player = new SoundPlayer();
 
     // set up timer and events
     const timer = new Timer();
@@ -66,7 +75,7 @@ function init() {
         document.getElementById('overlay').className = 'complete';
         document.getElementById('active-toggle').innerText = 'Restart';
         timer.reset(settings.get('start-time'));
-        playSound(settings);
+        playSound(player, settings);
     });
 
     // set up interactivity
