@@ -1,0 +1,36 @@
+.container {
+    width: 300px;
+    height: 116px;
+    background-image: url(../images/frame-open.png);
+    background-size: contain;
+    font-family: 'Charm', sans-serif;
+    font-weight: bold;
+}
+.main {
+    margin: 0 5px;
+    padding: 14px 20px;
+    text-align: center;
+    color: #F9F9F9;
+    text-shadow:
+        1px 1px 1px rgba(0,0,0,0.5),
+        -1px 1px 1px rgba(0,0,0,0.5),
+        1px -1px 1px rgba(0,0,0,0.5),
+        -1px -1px 1px rgba(0,0,0,0.5);
+}
+#title:after {
+    display: block;
+    content: 'zatsudan';
+    font-size: 24px;
+    letter-spacing: 0.1em;
+}
+#time, #message:after {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 45px;
+}
+.complete #time {
+    display: none;
+}
+.complete #message:after {
+    content: 'Done';
+}

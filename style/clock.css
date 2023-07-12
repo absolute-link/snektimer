@@ -1,17 +1,19 @@
 .container {
     width: 300px;
-    height: 100px;
-    font-family: 'Courier New', Courier, monospace;
+    height: 143px;
+    background-image: url(../images/clock.png);
+    background-size: contain;
+    font-family: 'Noto Sans Mono', monospace;
 }
 .main {
     margin: 0 5px;
-    padding: 10px 20px;
+    padding: 38px 20px 10px 20px;
     text-align: center;
-    color: #0A0A0A;
+    color: #F9F9F9;
 }
 #time, #message:after {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 65px;
 }
 .complete #time {
     display: none;
