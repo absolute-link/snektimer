@@ -55,12 +55,20 @@
     margin-right: 4px;
     text-align: center;
 }
+#controls #error.error {
+    display: inline;
+    margin-left: 4px;
+    background-color: #880000;
+}
+#controls #error.ok {
+    display: none;
+}
 #controls select {
     vertical-align: middle;
     width: 230px;
 }
 #controls #start-time {
-    width: 80px;
+    width: 65px;
 }
 #controls #active-toggle {
     font-size: 1.6em;

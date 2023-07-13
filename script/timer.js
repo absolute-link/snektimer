@@ -16,7 +16,7 @@ class Duration {
         let seconds = 0;
         let multiplier = 1;
         while (parts.length) {
-            seconds += (parseInt(parts.pop()) || 0) * multiplier;
+            seconds += Math.abs(parseInt(parts.pop()) || 0) * multiplier;
             multiplier = multiplier * 60;
         }
         return seconds;
@@ -69,10 +69,14 @@ class Timer {
         }, 100);
     }
 
+    hasRemainingTime() {
+        return (this.remainingDuration && Math.floor(this.remainingDuration.seconds) > 0);
+    }
+
     iteration() {
         const diff = Math.floor((new Date() - this.startDate) / 1000);
         this.remainingDuration = new Duration(this.startDuration.seconds - diff);
-        if (Math.floor(this.remainingDuration.seconds) > 0) {
+        if (this.hasRemainingTime()) {
             if (this.events.update) this.events.update();
         } else {
             this.stop();
