@@ -20,7 +20,7 @@
     margin-bottom: 20px;
 }
 #controls {
-    width: 300px;
+    width: 380px;
     padding: 20px;
     background-color: #222244;
     color: #ffffff;
@@ -37,12 +37,15 @@
 }
 #controls select {
     vertical-align: middle;
-    min-width: 140px;
+    width: 230px;
+}
+#controls #start-time {
+    width: 80px;
 }
 #controls #active-toggle {
-    font-size: 1.4em;
-    width: 284px;
+    font-size: 1.6em;
+    width: 380px;
 }
-#start-time {
-    width: 50px;
+#controls #save-settings {
+    width: 230px;
 }

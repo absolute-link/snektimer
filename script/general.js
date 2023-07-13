@@ -20,7 +20,7 @@ function createDropdowns() {
         designChoice.appendChild(opt);
     }
 
-    for (const [val, text] of Object.entries(SOUNDS)) {
+    for (const [val, text] of Object.entries({...SOUNDS, ...VOICES})) {
         const opt = document.createElement('option');
         opt.value = val;
         opt.innerText = text;
@@ -36,16 +36,19 @@ function updateDesign(settings) {
     }
 }
 
+function chooseRandomFilename(configSection) {
+    const filenames = [...Object.keys(configSection)];
+    const num = Math.floor(Math.random() * filenames.length);
+    return filenames[num];
+}
+
 function playSound(player, settings) {
     const soundChoice = settings.get('sound-choice');
     if (soundChoice) {
-        if (soundChoice === '_random') {
-            const filenames = [...Object.keys(SOUNDS)];
-            const num = Math.floor(Math.random() * filenames.length);
-            player.play(filenames[num]);
-        } else {
-            player.play(soundChoice);
-        }
+        if (soundChoice === '_random_sound') player.play(chooseRandomFilename(SOUNDS));
+        else if (soundChoice === '_random_voice') player.play(chooseRandomFilename(VOICES));
+        else if (soundChoice === '_random_any') player.play(chooseRandomFilename({...SOUNDS, ...VOICES}));
+        else player.play(soundChoice);
     }
 }
 
