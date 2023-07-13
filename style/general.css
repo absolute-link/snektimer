@@ -20,8 +20,8 @@
 }
 @font-face {
     font-family: 'Erika Type';
-    font-weight: bold;
-    src: url('../fonts/ErikaType-Bold.ttf');
+    font-weight: normal;
+    src: url('../fonts/ErikaType.ttf');
 }
 @font-face {
     font-family: 'Noto Sans Mono';

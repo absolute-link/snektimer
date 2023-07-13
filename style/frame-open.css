@@ -3,8 +3,6 @@
     height: 116px;
     background-image: url(../images/frame-open.png);
     background-size: contain;
-    font-family: 'Charm', sans-serif;
-    font-weight: bold;
 }
 .main {
     margin: 0 5px;
@@ -18,12 +16,20 @@
         -1px -1px 1px rgba(0,0,0,0.5);
 }
 #title:after {
+    font-family: 'Charm', sans-serif;
+    font-weight: bold;
     display: block;
     content: 'zatsudan';
     font-size: 24px;
     letter-spacing: 0.1em;
 }
-#time, #message:after {
+#time {
+    font-family: 'Xanh Mono', monospace;
+    font-size: 50px;
+    line-height: 45px;
+}
+#message:after {
+    font-family: 'Charm', sans-serif;
     font-weight: bold;
     font-size: 50px;
     line-height: 45px;
