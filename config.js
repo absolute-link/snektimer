@@ -16,7 +16,7 @@ const SOUNDS = {
     'alarm-clock-short-6402-shorter.mp3': 'Alarm Clock (Beep)',
     'bass-dropmp3-14596.mp3': 'Bass Drop',
     'slap-bass-90288.mp3': 'Bass Slap',
-    'harp-flourish-6251': 'Harp',
+    'harp-flourish-6251.mp3': 'Harp',
     'hq-explosion-6288.mp3': 'Explosion',
     'microwave-finished-82491.mp3': 'Microwave',
     'rattlesnake-32718-shorter.mp3': 'Rattlesnake',
