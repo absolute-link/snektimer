@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Charm';
+    font-weight: bold;
+    src: url('../fonts/Charm-Bold.ttf');
+}
+@font-face {
+    font-family: 'Merienda';
+    font-weight: bold;
+    src: url('../fonts/Merienda-Bold.ttf');
+}
+@font-face {
+    font-family: 'Noto Sans Mono';
+    font-weight: bold;
+    src: url('../fonts/NotoSansMono-Bold.ttf');
+}
+
 #overlay {
     width: 300px;
     height: 200px;

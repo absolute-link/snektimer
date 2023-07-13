@@ -1,0 +1,31 @@
+.container {
+    width: 300px;
+    height: 110px;
+    background-image: url(../images/frame-backed.png);
+    background-size: contain;
+    font-family: 'Charm', sans-serif;
+    font-weight: bold;
+}
+.main {
+    margin: 0 5px;
+    padding: 18px 20px;
+    text-align: center;
+    color: #F9F9F9;
+}
+#title:after {
+    display: block;
+    content: 'zatsudan';
+    font-size: 20px;
+    letter-spacing: 0.1em;
+}
+#time, #message:after {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 35px;
+}
+.complete #time {
+    display: none;
+}
+.complete #message:after {
+    content: 'Done';
+}

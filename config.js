@@ -1,6 +1,7 @@
 const DESIGNS = {
-    'frame': 'Frame',
-    'clock': 'Clock',
+    'frame-backed': 'Frame (backed)',
+    'frame-open': 'Frame (open)',
+    'clock': 'Clock (digital)',
     'scroll-light': 'Scroll (light)',
     'scroll-dark': 'Scroll (dark)',
     'plain-light': 'Plain (light)',
