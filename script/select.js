@@ -12,7 +12,7 @@ class FancySelect extends HTMLElement {
 	multiSelect = false;
 	isOpen = false;
 	elementSize = {
-		width: "9rem",
+		width: "230px",
 		height: "2rem"
 	}
 	maxOptionsToShow = 5;

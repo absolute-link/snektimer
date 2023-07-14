@@ -12,7 +12,9 @@ function loadDesigns() {
 function createDropdowns() {
     const soundChoice = document.getElementById('sound-choice');
     soundChoice.addOption("[None]", "");
-    soundChoice.addOption("[Random]", "_random");
+    soundChoice.addOption("[Random: Sound Effect]", "_random_sound");
+    soundChoice.addOption("[Random: Voice Clip]", "_random_voice");
+    soundChoice.addOption("[Random: Any]", "_random_any");
     for (let sound in SOUNDS) {
         soundChoice.addOption(SOUNDS[sound], sound);
     }
@@ -42,7 +44,6 @@ function chooseRandomFilename(configSection) {
 
 function playSound(player, settings) {
     const soundChoice = settings.get('sound-choice')[0];
-    debugger;
     if (soundChoice) {
         if (soundChoice === '_random_sound') player.play(chooseRandomFilename(SOUNDS));
         else if (soundChoice === '_random_voice') player.play(chooseRandomFilename(VOICES));
