@@ -31,8 +31,8 @@ class Settings {
 
             const storageKey = this.makeStorageKey(id);
             let storedVal = window.localStorage.getItem(storageKey);
-            if(storedVal != null){
-                storedVal = storedVal !=(storedVal.startsWith('"') || storedVal.startsWith('[') || storedVal.startsWith('{')) ? JSON.parse(storedVal) : storedVal;
+            if (storedVal !== null) {
+                storedVal = (storedVal.startsWith('"') || storedVal.startsWith('[') || storedVal.startsWith('{')) ? JSON.parse(storedVal) : storedVal;
             }
 
             if (storedVal !== null) this.set(id, storedVal);

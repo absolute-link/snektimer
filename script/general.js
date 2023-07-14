@@ -11,19 +11,20 @@ function loadDesigns() {
 
 function createDropdowns() {
     const soundChoice = document.getElementById('sound-choice');
-    soundChoice.addOption("[None]", "");
-    soundChoice.addOption("[Random: Sound Effect]", "_random_sound");
-    soundChoice.addOption("[Random: Voice Clip]", "_random_voice");
-    soundChoice.addOption("[Random: Any]", "_random_any");
+    soundChoice.addOption('[None]', '');
+    soundChoice.addOption('[Random: Sound Effect]', '_random_sound');
+    soundChoice.addOption('[Random: Voice Clip]', '_random_voice');
+    soundChoice.addOption('[Random: Any]', '_random_any');
+
     for (let sound in SOUNDS) {
         soundChoice.addOption(SOUNDS[sound], sound);
     }
     for (let voice in VOICES) {
         soundChoice.addOption(VOICES[voice], voice);
     }
-    
+
     const designChoice = document.getElementById('design-choice');
-    for(let design in DESIGNS){
+    for (let design in DESIGNS){
         designChoice.addOption(DESIGNS[design], design);
     }
 }
