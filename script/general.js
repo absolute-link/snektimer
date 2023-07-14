@@ -10,26 +10,26 @@ function loadDesigns() {
 }
 
 function createDropdowns() {
-    const designChoice = document.getElementById('design-choice');
     const soundChoice = document.getElementById('sound-choice');
-
-    for (const [val, text] of Object.entries(DESIGNS)) {
-        const opt = document.createElement('option');
-        opt.value = val;
-        opt.innerText = text;
-        designChoice.appendChild(opt);
+    soundChoice.addOption("[None]", "");
+    soundChoice.addOption("[Random: Sound Effect]", "_random_sound");
+    soundChoice.addOption("[Random: Voice Clip]", "_random_voice");
+    soundChoice.addOption("[Random: Any]", "_random_any");
+    for (let sound in SOUNDS) {
+        soundChoice.addOption(SOUNDS[sound], sound);
     }
-
-    for (const [val, text] of Object.entries({...SOUNDS, ...VOICES})) {
-        const opt = document.createElement('option');
-        opt.value = val;
-        opt.innerText = text;
-        soundChoice.appendChild(opt);
+    for (let voice in VOICES) {
+        soundChoice.addOption(VOICES[voice], voice);
+    }
+    
+    const designChoice = document.getElementById('design-choice');
+    for(let design in DESIGNS){
+        designChoice.addOption(DESIGNS[design], design);
     }
 }
 
 function updateDesign(settings) {
-    const choice = settings.get('design-choice');
+    const choice = settings.get('design-choice')[0];
     for (const designName of Object.keys(DESIGNS)) {
         const setMedia = (designName === choice) ? 'all' : 'none';
         document.getElementById(designName).media = setMedia;
@@ -43,7 +43,7 @@ function chooseRandomFilename(configSection) {
 }
 
 function playSound(player, settings) {
-    const soundChoice = settings.get('sound-choice');
+    const soundChoice = settings.get('sound-choice')[0];
     if (soundChoice) {
         if (soundChoice === '_random_sound') player.play(chooseRandomFilename(SOUNDS));
         else if (soundChoice === '_random_voice') player.play(chooseRandomFilename(VOICES));
@@ -116,9 +116,9 @@ function init() {
         if (timer.active) timer.stop();
         handleRestartAttempt(timer, settings);
     });
-    document.getElementById('design-choice').addEventListener('change', () => {
+    document.getElementById('design-choice').onSelect = () => {
         updateDesign(settings);
-    });
+    }
     document.getElementById('reset-settings').addEventListener('click', () => {
         settings.loadFromStorage();
         updateDesign(settings);

@@ -6,6 +6,7 @@
         <title>SnekTimer</title>
         <link rel="stylesheet" href="style/general.css">
         <script src="config.js"></script>
+        <script src="script/select.js"></script>
         <script src="script/settings.js"></script>
         <script src="script/sound.js"></script>
         <script src="script/timer.js"></script>
@@ -34,15 +35,10 @@
                 <button id="reset">Restart at Time</button><input id="start-time" type="text"><span id="error" class="ok"></span>
             </div>
             <div>
-                <label>Choose Style:</label><select id="design-choice" size="5"></select>
+                <label>Choose Style:</label><fancy-select id="design-choice"></fancy-select>
             </div>
             <div>
-                <label>Choose Sound:</label><select id="sound-choice" size="5">
-                    <option value="">[None]</option>
-                    <option value="_random_sound">[Random: Sound Effect]</option>
-                    <option value="_random_voice">[Random: Voice Clip]</option>
-                    <option value="_random_any">[Random: Any]</option>
-                </select>
+                <label>Choose Sound:</label><fancy-select id="sound-choice"></fancy-select>
             </div>
             <div>
                 <label>Auto-Start:</label><input id="auto-start" type="checkbox">

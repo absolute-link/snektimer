@@ -11,8 +11,8 @@ class Settings {
     storagePfx = 'default';
     items = {
         'start-time': new SettingsItem('30:00'),
-        'design-choice': new SettingsItem('frame-backed'),
-        'sound-choice': new SettingsItem('harp-flourish-6251.mp3'),
+        'design-choice': new SettingsItem(['frame-backed']),
+        'sound-choice': new SettingsItem(['harp-flourish-6251.mp3']),
         'auto-start': new SettingsItem(true)
     };
 
@@ -30,7 +30,10 @@ class Settings {
             item.element = document.getElementById(id);
 
             const storageKey = this.makeStorageKey(id);
-            const storedVal = window.localStorage.getItem(storageKey);
+            let storedVal = window.localStorage.getItem(storageKey);
+            if(storedVal != null){
+                storedVal = storedVal !=(storedVal.startsWith('"') || storedVal.startsWith('[') || storedVal.startsWith('{')) ? JSON.parse(storedVal) : storedVal;
+            }
 
             if (storedVal !== null) this.set(id, storedVal);
             else if (item.defaultVal !== null) this.set(id, item.defaultVal);
@@ -58,7 +61,7 @@ class Settings {
             const val = this.get(id);
 
             if (typeof val === 'boolean') window.localStorage.setItem(storageKey, (val) ? 'true' : '');
-            else window.localStorage.setItem(storageKey, val);
+            else window.localStorage.setItem(storageKey, JSON.stringify(val));
         }
     }
 }
