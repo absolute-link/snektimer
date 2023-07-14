@@ -29,30 +29,17 @@ class FancySelect extends HTMLElement {
 		this.style.display = "inline-block";
 		this.style.cursor = "pointer";
 		this.optionContainer = document.createElement('div');
-		this.optionContainer.style.position = "absolute";
-		this.optionContainer.style.backgroundColor = "#9B9572";
-		this.optionContainer.style.padding = "0";
+		this.optionContainer.classList.add("optionContainer");
 		this.optionContainer.style.height = this.elementSize.height;// recalculated on open/close anyway
 		this.optionContainer.style.width = this.elementSize.width;
-		this.optionContainer.style.display = "block";
-		this.optionContainer.style.overflowX = "hidden";
-		this.optionContainer.style.overflowY = "auto";
-		this.optionContainer.style.boxSizing = "border-box";
 		
 		this.appendChild(this.optionContainer);
 		
 		this.currentlySelected = document.createElement('div');
 		this.currentlySelected.innerHTML = "Select";
 		this.currentlySelected.classList.add("withAfter");
+		this.currentlySelected.classList.add("currentlySelected");
 		this.currentlySelected.setAttribute("content", "▼")
-		this.currentlySelected.style.height = "100%";
-		this.currentlySelected.style.width = "100%";
-		this.currentlySelected.style.display = "flex";
-		this.currentlySelected.style["align-items"] = "center";
-		this.currentlySelected.style["padding-left"] = "0.5rem";
-		this.currentlySelected.style["padding-right"] = "0.5rem";
-		this.currentlySelected.style["boxSizing"] = "border-box";
-		this.currentlySelected.style["justify-content"] = "space-between";
 		this.appendChild(this.currentlySelected);
 		this.currentlySelected.addEventListener('click', (e) => {
 			this.isOpen = 1;
@@ -65,11 +52,7 @@ class FancySelect extends HTMLElement {
 		option.innerHTML = optionText;
 		option.style.width = this.elementSize.width;
 		option.style.height = this.elementSize.height;
-		option.style["boxSizing"] = "border-box";
-		option.style.marginBottom = "0";
-		option.style.padding = "0.25rem";
 		option.classList.add("hasMouseOver");
-		option.style.cursor = "pointer";
 		this.optionContainer.appendChild(option);
 		option.addEventListener('click', (e) => {
 			this.select(optionValue, e);

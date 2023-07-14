@@ -80,6 +80,35 @@
 .withAfter::after{
     content: attr(content);
 }
+
+.optionContainer{
+    position: absolute;
+    background-color: #9B9572;
+    padding: 0;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.currentlySelected{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.option{
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
 fancy-select .hasMouseOver:hover{
     background-color: #B7A981;
 }
