@@ -10,33 +10,21 @@ function loadDesigns() {
 }
 
 function createDropdowns() {
-    const designChoice = document.getElementById('design-choice');
     const soundChoice = document.getElementById('sound-choice');
-
-    for (const [val, text] of Object.entries(DESIGNS)) {
-        const opt = document.createElement('option');
-        opt.value = val;
-        opt.innerText = text;
-        designChoice.appendChild(opt);
-    }
-
-    for (const [val, text] of Object.entries(SOUNDS)) {
-        const opt = document.createElement('option');
-        opt.value = val;
-        opt.innerText = text;
-        soundChoice.appendChild(opt);
+    soundChoice.addOption("[None]", "");
+    soundChoice.addOption("[Random]", "_random");
+    for (let sound in SOUNDS) {
+        soundChoice.addOption(SOUNDS[sound], sound);
     }
     
-    const designChoice2 = document.getElementById('design-choice2');
+    const designChoice = document.getElementById('design-choice');
     for(let design in DESIGNS){
-        designChoice2.addOption(DESIGNS[design], design);
+        designChoice.addOption(DESIGNS[design], design);
     }
 }
 
 function updateDesign(settings) {
-    // document.body.className = settings.get('design-choice2');
-    const choice = settings.get('design-choice2');
-    // const choice = settings.get('design-choice');
+    const choice = settings.get('design-choice')[0];
     for (const designName of Object.keys(DESIGNS)) {
         const setMedia = (designName === choice) ? 'all' : 'none';
         document.getElementById(designName).media = setMedia;
@@ -44,7 +32,8 @@ function updateDesign(settings) {
 }
 
 function playSound(player, settings) {
-    const soundChoice = settings.get('sound-choice');
+    const soundChoice = settings.get('sound-choice')[0];
+    debugger;
     if (soundChoice) {
         if (soundChoice === '_random') {
             const filenames = [...Object.keys(SOUNDS)];
@@ -95,10 +84,7 @@ function init() {
         timer.reset(settings.get('start-time'));
         timer.start();
     });
-    document.getElementById('design-choice').addEventListener('change', () => {
-        updateDesign(settings);
-    });
-    document.getElementById('design-choice2').onSelect = () => {
+    document.getElementById('design-choice').onSelect = () => {
         updateDesign(settings);
     }
     document.getElementById('reset-settings').addEventListener('click', () => {

@@ -46,3 +46,13 @@
 #start-time {
     width: 50px;
 }
+.withAfter::after{
+    content: attr(content);
+}
+fancy-select .hasMouseOver:hover{
+    background-color: #B7A981;
+}
+
+fancy-select .selected{
+    background-color: #E3E5EA44;
+}
