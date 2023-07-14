@@ -7,12 +7,12 @@ The timer can be paused, started, and restarted, and changing to a different sty
 # OBS Setup
 
 1. Add a new Browser Capture to your scene in OBS, and fill in the URL (or browse to the local file).
-1. Set the width and height to 450 and 600 respectively.
+1. Set the width and height to 450 and 550 respectively.
 1. Check "Control audio via OBS".
 1. Leave or empty the default "Custom CSS", it makes no difference.
 1. Check "Shutdown source when not visible" and "Refresh browser when scene becomes available" (if used with "auto-start", you can start the timer simply by toggling the source visibility)
 1. Set Page permissions to "No access to OBS"
-1. Right-click on the source, go to Transform > Edit Transform. Set it to crop 425 px from the bottom. (this will hide the controls from view no matter where you put the timer, but you can still interact)
+1. Right-click on the source, go to Transform > Edit Transform. Set it to crop 375px from the bottom. (this will hide the controls from view no matter where you put the timer, but you can still interact)
 1. Setting the "control audio" should give you an audio source in the mixer. Set its "Audio monitoring" to "Monitor and Output" so you can hear and broadcast it.
 
 # How to Use
