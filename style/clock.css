@@ -15,6 +15,9 @@
     font-weight: bold;
     font-size: 65px;
 }
+.stopped #time {
+    color: #DFDFDF;
+}
 .complete #time {
     display: none;
 }

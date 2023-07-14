@@ -27,6 +27,9 @@
     font-size: 40px;
     line-height: 40px;
 }
+.stopped #time {
+    color: #DDDDDD;
+}
 .complete #time {
     display: none;
 }

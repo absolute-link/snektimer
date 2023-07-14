@@ -32,6 +32,9 @@
     font-size: 40px;
     line-height: 40px;
 }
+.stopped #time {
+    color: #444856;
+}
 .complete #time {
     display: none;
 }
