@@ -82,7 +82,8 @@ function handleRestartAttempt(timer, settings) {
 function init() {
     createDropdowns();
 
-    const settings = new Settings(window.location.hash);
+    const settingsPfx = window.location.hash || window.location.pathname.split('/').pop() || '';
+    const settings = new Settings(settingsPfx);
     updateDesign(settings);
 
     const player = new SoundPlayer();
