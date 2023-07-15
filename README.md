@@ -47,6 +47,12 @@ Designs, sounds, and voice clips are defined in `config.js` in the root of the d
 1. If you're handy with CSS, you can do the same for the designs. Each one in `config.js` points to a single `.css` file in the `style` directory, and you can add, remove, or modify those as well.
 1. Protip: for most designs, the words "zatsudan" or "zatsu" and the "Done" or "Done!" displayed at the end are part of the CSS, so you can edit the wording directly as well! You can do this even without CSS knowledge, just look for them in the file.
 
+## Privacy
+
+This project is completely self-contained for safety and privacy: it has no access to anything but itself, and neither sends nor receives data of any kind.
+
+We focused hard on making it very simple and with no build process or third-party code, so that it would be as easy as possible to confidently verify that.
+
 ## CREDIT
 
 - Programming:
